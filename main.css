@@ -1,0 +1,45 @@
+:root {/* Se refere ao elemento raíz do HTML: <html> */
+  --green: #00ff00; /* Três variáveis. */
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body {
+  background-color: var(--bg); /* Cria uma variável chamada bg para ser usada e modificada por outros elementos CSS */
+  color: var(--fontColor); /* Cria uma variável chamada fontColor para ser usada e modificada por outros elementos CSS */
+  font-family: Helvetica;
+}
+
+li {
+  list-style: circle;
+}
+
+.list { /* o seletor ' . ' referece à classes criadas no MTML, e o seletor ' # ' refere-se à ID's no HTML */
+  list-style: square;
+}
+
+.light-theme {
+  --bg: var(--green); /* Uso da variável criada em ' :root ' e manipulada aqui. */
+  --fontColor: var(--black); /* Uso da variável criada em ' :root ' e manipulada aqui. */
+  --btnBg: var(--black); /* Nova variável criada '--btnBg' para modificar a cor de fundo quando o tema estiver em claro */
+  --btnFontColor: var(--white); /* Nova variável para cor da fonte quando a classe 'light-theme' estiver sendo utilizada */
+}
+
+.dark-theme {
+  --bg: var(--black); /* Variável em :root modificada */
+  --fontColor: var(--green); /* Variável em :root modificada */
+  --btnBg: var(--white); /* Variável criada para mudar a cor de fundo quando a classe 'dark-theme' estiver sendo utilizada */
+  --btnFontColor: var(--black); /* Variável para mudar a cor da fonte quando a classe 'dark-theme' estiver sendo utilizada */
+}
+
+.btn { /* Classe btn */
+  position: absolute;
+  top: 20px;
+  left: 250px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+}
